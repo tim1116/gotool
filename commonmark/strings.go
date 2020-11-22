@@ -14,6 +14,7 @@ func Md5(str string) string {
 }
 
 // 只用于去除字符串前后空格使用
+// 此方法和 strings.TrimSpace 一致
 func Trim(str string) string {
 	return strings.Trim(str, " ")
 }
