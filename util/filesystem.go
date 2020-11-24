@@ -16,3 +16,13 @@ func FileExists(path string) bool {
 	}
 	return true
 }
+
+// 判断给定路径是否为文件夹
+// 类似php is_dir
+func IsDir(path string) bool {
+	s, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+	return s.IsDir()
+}
