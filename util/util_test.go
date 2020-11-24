@@ -22,13 +22,20 @@ func TestFileExists(t *testing.T) {
 	if re != true {
 		t.FailNow()
 	}
+
 	// 测试文件夹
 	re = FileExists(path.Dir(file))
 	if re != true {
 		t.FailNow()
 	}
 
-	// 测试是否为文件夹
+	// IsFile
+	re = IsFile(file)
+	if re != true {
+		t.FailNow()
+	}
+
+	// IsDir
 	re = IsDir(path.Dir(file))
 	if re != true {
 		t.FailNow()

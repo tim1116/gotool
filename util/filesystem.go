@@ -26,3 +26,13 @@ func IsDir(path string) bool {
 	}
 	return s.IsDir()
 }
+
+// 判断给定路径是否为文件
+// 类似php is_file
+func IsFile(path string) bool {
+	s, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+	return !s.IsDir()
+}
