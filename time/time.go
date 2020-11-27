@@ -16,6 +16,13 @@ func Time() int64 {
 	return time.Now().Unix()
 }
 
+// 返回当前时间微妙  有点类似php microtime()
+func MicroTime() float64 {
+	micro := time.Now().UnixNano() / 1e3
+	time := float64(micro)
+	return time / 1000000
+}
+
 // 类似PHP strtotime()
 // 暂时只支持TIME_LAYOUT格式转化 通过err判断转化是否成功
 func Strtotime(layout string) (int64, error) {
