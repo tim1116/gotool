@@ -1,6 +1,9 @@
 package util
 
-import "runtime"
+import (
+	"os"
+	"runtime"
+)
 
 // 一些原有php常量的信息
 
@@ -8,4 +11,10 @@ import "runtime"
 // eg:windows
 func Os() string {
 	return runtime.GOOS
+}
+
+// 获取文件分割符 php 中的 DIRECTORY_SEPARATOR
+func DirsctorySeparator() string {
+	separator := os.PathSeparator
+	return string(separator)
 }
