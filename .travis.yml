@@ -1,5 +1,12 @@
 language: go
 go:
   - 1.15.3
+#script:
+#  - go test -v ./...
+sudo: required
+
+install:
+  - echo "install"
+
 script:
-  - go test -v ./...
+  - echo "script"
