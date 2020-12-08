@@ -44,3 +44,21 @@ func TestFileExists(t *testing.T) {
 		t.FailNow()
 	}
 }
+
+func TestPathInfo(t *testing.T) {
+	var pathMap map[string]string
+	path := "/vagrant_data/tp6.0/config/app.php"
+	pathMap = PathInfo(path)
+	if pathMap["dirname"] != "/vagrant_data/tp6.0/config" {
+		t.FailNow()
+	}
+	if pathMap["basename"] != "app.php" {
+		t.FailNow()
+	}
+	if pathMap["extension"] != "php" {
+		t.FailNow()
+	}
+	if pathMap["filename"] != "app" {
+		t.FailNow()
+	}
+}

@@ -2,6 +2,9 @@ package util
 
 import (
 	"os"
+	"path"
+	"path/filepath"
+	"strings"
 )
 
 // 判断所给路径文件/文件夹是否存在
@@ -35,4 +38,22 @@ func IsFile(path string) bool {
 		return false
 	}
 	return !s.IsDir()
+}
+
+// 返回文件路径的信息
+func PathInfo(pathU string) map[string]string {
+	re := make(map[string]string)
+
+	dirname := path.Dir(pathU)
+	re["dirname"] = dirname
+	basename := filepath.Base(pathU)
+	re["basename"] = basename
+
+	extensionRaw := filepath.Ext(pathU)
+	extension := strings.TrimLeft(extensionRaw, ".")
+	re["extension"] = extension
+
+	filename := strings.TrimSuffix(basename, extensionRaw)
+	re["filename"] = filename
+	return re
 }
