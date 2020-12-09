@@ -61,4 +61,19 @@ func TestPathInfo(t *testing.T) {
 	if pathMap["filename"] != "app" {
 		t.FailNow()
 	}
+
+	path = "aa/bb/cc.go"
+	pathMap = PathInfo(path)
+	if pathMap["dirname"] != "aa/bb" {
+		t.FailNow()
+	}
+	if pathMap["basename"] != "cc.go" {
+		t.FailNow()
+	}
+	if pathMap["extension"] != "go" {
+		t.FailNow()
+	}
+	if pathMap["filename"] != "cc" {
+		t.FailNow()
+	}
 }
