@@ -24,6 +24,7 @@ func TestDate(t *testing.T) {
 	var tt int64 = 1608460259
 	ss := Date(TIME_LAYOUT, tt)
 	if ss != "2020-12-20 18:30:59" {
+		fmt.Printf("----- %s -----\n", ss)
 		t.FailNow()
 	}
 }
