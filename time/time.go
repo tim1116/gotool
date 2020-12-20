@@ -38,6 +38,6 @@ func Strtotime(layout string) (int64, error) {
 
 // 类似PHP date()
 func Date(format string, unixTime int64) string {
-	time := time.Unix(unixTime, 0)
+	time := time.Unix(unixTime, 0).Local()
 	return time.Format(format)
 }
