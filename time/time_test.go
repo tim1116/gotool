@@ -19,3 +19,11 @@ func TestStrtotime(t *testing.T) {
 	r, _ := Strtotime("2020-11-02 15:04:05")
 	fmt.Println(r)
 }
+
+func TestDate(t *testing.T) {
+	var tt int64 = 1608460259
+	ss := Date(TIME_LAYOUT, tt)
+	if ss != "2020-12-20 18:30:59" {
+		t.FailNow()
+	}
+}
