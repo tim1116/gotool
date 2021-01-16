@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const TIME_LAYOUT = "2006-01-02 15:04:05"
+const Layout = "2006-01-02 15:04:05"
 
 // time.  类似php time()函数
 func Time() int64 {
@@ -19,8 +19,8 @@ func Time() int64 {
 // 返回当前时间微妙  有点类似php microtime()
 func MicroTime() float64 {
 	micro := time.Now().UnixNano() / 1e3
-	time := float64(micro)
-	return time / 1000000
+	timeF := float64(micro)
+	return timeF / 1000000
 }
 
 // 类似PHP strtotime()
@@ -28,7 +28,7 @@ func MicroTime() float64 {
 func Strtotime(layout string) (int64, error) {
 	var unixTime int64
 	loc, _ := time.LoadLocation("Local")
-	theTime, err := time.ParseInLocation(TIME_LAYOUT, layout, loc)
+	theTime, err := time.ParseInLocation(Layout, layout, loc)
 	if err != nil {
 		return unixTime, err
 	}
@@ -38,6 +38,8 @@ func Strtotime(layout string) (int64, error) {
 
 // 类似PHP date()
 func Date(format string, unixTime int64) string {
-	time := time.Unix(unixTime, 0).Local()
-	return time.Format(format)
+	//TODO 指定时区 time.LoadLocation windows系统需要配置go环境 否则可能会有问题
+	var cstSh, _ = time.LoadLocation("Asia/Shanghai") //上海
+	tm := time.Unix(unixTime, 0).In(cstSh)
+	return tm.Format(format)
 }
