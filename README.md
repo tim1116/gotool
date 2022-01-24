@@ -1,6 +1,6 @@
 # gotool
-[![Build Status](https://travis-ci.org/scauxiaoxu/gotool.svg?branch=main)](https://travis-ci.org/scauxiaoxu/gotool)
-![GitHub](https://img.shields.io/github/license/scauxiaoxu/gotool)
+[![Build Status](https://travis-ci.org/tim1116/gotool.svg?branch=main)](https://travis-ci.org/tim1116/gotool)
+![GitHub](https://img.shields.io/github/license/tim1116/gotool)
 
 
 
@@ -8,4 +8,4 @@
 
 #### Download and install
 
-    go get github.com/scauxiaoxu/gotool
+    go get github.com/tim1116/gotool
