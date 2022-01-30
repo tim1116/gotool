@@ -1,19 +1,31 @@
 package slice
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestCreateRandomIntSlice(t *testing.T) {
-	createRandomIntSlice(5, 10)
+	lenSlice := 5
+	sli := CreateRandomIntSlice(lenSlice, 10)
+	if len(sli) != lenSlice {
+		t.Error(`切片长度异常`)
+	}
 }
 
 func TestCreateIntSlice(t *testing.T) {
-	rand := RandIntSlice{
-		Min: -1,
-		Max: 50,
-		Len: 10,
+	vMax, vMin, vLen := 50, -1, 10
+	rand := RandSlice{
+		Min: int64(vMin),
+		Max: int64(vMax),
+		Len: vLen,
 	}
-	fmt.Println(rand.createIntSlice())
+	intSlice := rand.CreateIntSlice()
+	if len(intSlice) != vLen {
+		t.Error(`切片长度异常`)
+	}
+	for _, v := range intSlice {
+		if v < vMin || v > vMax {
+			t.Error(`范围异常`)
+		}
+	}
 }
