@@ -1,5 +1,5 @@
 # gotool
-[![Build Status](https://travis-ci.org/tim1116/gotool.svg?branch=main)](https://travis-ci.org/tim1116/gotool)
+[![Build Status](https://github.com/tim1116/gotool/workflows/Run%20Tests/badge.svg?branch=main)](https://github.com/tim1116/gotool/actions?query=branch%3Amain)
 ![GitHub](https://img.shields.io/github/license/tim1116/gotool)
 
 
