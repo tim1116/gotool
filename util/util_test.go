@@ -13,7 +13,7 @@ func TestAll(t *testing.T) {
 	osself := Os()
 	fmt.Println(osself)
 	// 文件分隔符
-	pathSeparator := DirsctorySeparator()
+	pathSeparator := DirectorySeparator()
 	fmt.Println(pathSeparator)
 }
 

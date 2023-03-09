@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// 判断所给路径文件/文件夹是否存在
+// FileExists 判断所给路径文件/文件夹是否存在
 // 类似 php file_exists 函数
 func FileExists(path string) bool {
 	_, err := os.Stat(path) //os.Stat获取文件信息
@@ -20,7 +20,7 @@ func FileExists(path string) bool {
 	return true
 }
 
-// 判断给定路径是否为文件夹
+// IsDir 判断给定路径是否为文件夹
 // 类似php is_dir
 func IsDir(path string) bool {
 	s, err := os.Stat(path)
@@ -30,7 +30,7 @@ func IsDir(path string) bool {
 	return s.IsDir()
 }
 
-// 判断给定路径是否为文件
+// IsFile 判断给定路径是否为文件
 // 类似php is_file
 func IsFile(path string) bool {
 	s, err := os.Stat(path)
@@ -40,7 +40,7 @@ func IsFile(path string) bool {
 	return !s.IsDir()
 }
 
-// 返回文件路径的信息
+// PathInfo 返回文件路径的信息
 func PathInfo(pathU string) map[string]string {
 	re := make(map[string]string)
 
